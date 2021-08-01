@@ -17,11 +17,11 @@ namespace EvermosSelenium
 {
     class Program
     {
-        IWebDriver driver = new ChromeDriver("D:\\Work\\Automated Test\\Chrome Driver");
+        IWebDriver driver = new ChromeDriver("D:\\Work\\Automated Test\\Chrome Driver New");
 
         static void Main(string[] args)
         {
-            //Console.Write("Automated Test is started");
+            Console.Write("Automated Test is started");
         }
 
         [SetUp]
@@ -44,9 +44,13 @@ namespace EvermosSelenium
             element.Click();
 
             Thread.Sleep(5000);
+        }
 
-            //element = driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div/div[1]/div[1]"));
-            //element.Displayed();
+        [Test]
+        public void Logout()
+        {
+            IWebElement element = driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div/div[4]/div/a[1]/div[2]/div[1]"));
+            element.Click();
         }
 
         [TearDown]
